@@ -9,7 +9,8 @@ module.exports = {
     target: 'web',
     cache: true,
     entry: {
-        module: path.join(srcPath, 'js/app.jsx')
+        p1:path.join(srcPath, 'js/app.jsx'),
+        p2:path.join(srcPath, 'js/login.jsx')
     },
     resolve: {
         root: srcPath,
@@ -17,8 +18,7 @@ module.exports = {
         modulesDirectories: ['node_modules', 'src']
     },
     output: {
-        path: path.join(__dirname, 'tmp'),
-        publicPath: '',
+        path: path.join(__dirname, 'dist'),
         filename: '[name].js',
         library: ['Example', '[name]'],
         pathInfo: true
@@ -33,16 +33,14 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
         new HtmlWebpackPlugin({
-            inject: true,
+            inject:true,
             template: 'src/index.html'
         }),
+        new HtmlWebpackPlugin({
+            inject:true,
+            filename:'login.html',
+            template: 'src/login.html'
+        }),
         new webpack.NoErrorsPlugin()
-    ],
-
-    debug: true,
-    devtool: 'eval-cheap-module-source-map',
-    devServer: {
-        contentBase: './tmp',
-        historyApiFallback: true
-    }
+    ]
 };
