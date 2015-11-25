@@ -9,6 +9,7 @@
     "test": "echo \"No unit tests and e2e tests yet\" && exit 1"
   },
   "author": "bu",
+  "repository":"https://github.com/aq2004723/web_app",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",
@@ -18,12 +19,9 @@
     "webpack": "^1.12.8"
   },
   "dependencies": {
-    "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
     "html-webpack-plugin": "^1.7.0",
     "materialize-css": "^0.97.3",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "webpack-dev-server": "^1.12.1"
+    "react-dom": "^0.14.3"
   }
 }
