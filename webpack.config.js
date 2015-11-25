@@ -9,8 +9,7 @@ module.exports = {
     target: 'web',
     cache: true,
     entry: {
-        p1:path.join(srcPath, 'js/app.jsx'),
-        p2:path.join(srcPath, 'js/login.jsx')
+        app:path.join(srcPath, 'js/app.jsx')
     },
     resolve: {
         root: srcPath,
@@ -26,20 +25,14 @@ module.exports = {
 
     module: {
         loaders: [
-            {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
-            {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
+            {test: /\.js?$/, exclude: /node_modules/, loader: 'babel-loader'},
+            {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'}
         ]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
         new HtmlWebpackPlugin({
-            inject:true,
             template: 'src/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            inject:true,
-            filename:'login.html',
-            template: 'src/login.html'
         }),
         new webpack.NoErrorsPlugin()
     ]

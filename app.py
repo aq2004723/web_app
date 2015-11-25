@@ -12,7 +12,7 @@ define("mongo_name", default="test", help="数据库名字", type=str)
 
 application = Application(
     handlers=handlers,
-    static_path=os.path.join(os.path.dirname(__file__),'static'),
+    static_path=os.path.join(os.path.dirname(__file__),'dist'),
     template_path=os.path.join(os.path.dirname(__file__),'template'),
     login_url='/login',
     cookie_secret='asdasdqddsqekldaskldaskldasklakjfkjbfbn',
