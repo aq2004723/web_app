@@ -9,12 +9,11 @@ module.exports = {
     target: 'web',
     cache: true,
     entry: {
-        module: path.join(srcPath, 'module.js'),
-        common: ['react', 'react-router', 'alt']
+        module: path.join(srcPath, 'js/app.jsx')
     },
     resolve: {
         root: srcPath,
-        extensions: ['', '.js'],
+        extensions: ['', '.js','.jsx'],
         modulesDirectories: ['node_modules', 'src']
     },
     output: {
@@ -27,7 +26,8 @@ module.exports = {
 
     module: {
         loaders: [
-            {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'}
+            {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
+            {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
         ]
     },
     plugins: [

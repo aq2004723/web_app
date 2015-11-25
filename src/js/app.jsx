@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import MyTable from './components/form.jsx'
 
 ReactDom.render(
-  <h1>Example</h1>,
+  <MyTable />,
   document.getElementById('content')
 );
